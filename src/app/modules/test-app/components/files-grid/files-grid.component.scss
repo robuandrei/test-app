@@ -1,0 +1,18 @@
+@mixin card-margins {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: yellow;
+    .file {
+      color: red;
+    }
+    .folder {
+      color: blue;
+    }
+  }
+}
+
+/deep/ mat-card {
+  @include card-margins;
+}

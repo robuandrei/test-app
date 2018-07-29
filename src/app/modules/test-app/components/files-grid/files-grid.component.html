@@ -1,0 +1,24 @@
+<!-- Card component from Angular Material -->
+<!-- Create a for and inside of this use if/else statement to display folders or files -->
+<mat-card *ngFor="let item of items">
+
+  <mat-card-title>
+
+    <!-- If exist folders in array, display him -->
+    <span class ="folder" 
+          *ngIf="item.entry.target.folder; else files">
+      <mat-icon>folder</mat-icon>
+      {{item.entry.target.folder.name}}
+    </span>
+
+    <!-- Else exist files in array, display him -->
+    <ng-template #files>
+      <span class="file">
+        <mat-icon>insert_drive_file</mat-icon>
+        {{item.entry.target.file.name}}
+      </span>
+    </ng-template>
+    
+  </mat-card-title>
+
+</mat-card>
